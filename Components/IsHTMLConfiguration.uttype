@@ -1,0 +1,19 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "fda5c62859e24e2ba349ca1006aa97b1",
+    "Name": "IsHTMLConfiguration",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Configuration",
+    "Fields": [{
+        "Id": "d85178ca08814b06b410fdb847de727c",
+        "Name": "css",
+        "FieldType": { "Id": "1bff5adddd7c41de98d3329c7c641208", "Name": "String" },
+        "Array": false,
+        "Visibility": 0
+    }],
+    "DefaultValue": {
+        "Type": { "Id": "fda5c62859e24e2ba349ca1006aa97b1", "Name": "IsHTMLConfiguration" }
+    }
+}]

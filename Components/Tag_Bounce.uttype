@@ -1,0 +1,12 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "fdb985b620844f5bbc07200f7b64e69d",
+    "Name": "Tag_Bounce",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Component",
+    "DefaultValue": {
+        "Type": { "Id": "fdb985b620844f5bbc07200f7b64e69d", "Name": "Tag_Bounce" }
+    }
+}]

@@ -1,0 +1,31 @@
+﻿[{
+    "$TypeId": 3,
+    "Id": "f44107dcedac4ea6ae01c9ca986a4aae",
+    "Name": "IsHTML",
+    "ExportFlags": 0,
+    "Unlisted": false,
+    "Visibility": 0,
+    "TypeCode": "Component",
+    "Fields": [{
+        "Id": "b9aa37b5857a437dabcf18cac45061ad",
+        "Name": "html",
+        "FieldType": { "Id": "1bff5adddd7c41de98d3329c7c641208", "Name": "String" },
+        "Array": false,
+        "Visibility": 0
+    }, {
+        "Id": "e836177b348942759a3edecd331cf615",
+        "Name": "_selector",
+        "FieldType": { "Id": "1bff5adddd7c41de98d3329c7c641208", "Name": "String" },
+        "Array": false,
+        "Visibility": 1
+    }, {
+        "Id": "469a93f81ff54182a1de81782649aa16",
+        "Name": "enabled",
+        "FieldType": { "Id": "2b477f505af74487b7092b5617d88d3f", "Name": "Boolean" },
+        "Array": false,
+        "Visibility": 0
+    }],
+    "DefaultValue": {
+        "Type": { "Id": "f44107dcedac4ea6ae01c9ca986a4aae", "Name": "IsHTML" }
+    }
+}]
