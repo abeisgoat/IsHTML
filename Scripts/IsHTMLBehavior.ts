@@ -40,33 +40,16 @@ namespace game {
         {
           text: "Yes",
           action: () => {
-            alert("You saidy yes")
+            alert("You saidy yes");
           }
         },
         {
           text: "No",
           action: () => {
-            alert("You said nah")
+            alert("You said nah");
           }
         }
       ];
-      // tag.innerHTML = (
-      //     <div
-      //       className="popup"
-      //       style="display: grid;
-      //               background-color: white; border-radius: 10px;
-      //               overflow: hidden;
-      //               box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3)"
-      //     >
-      //       <b style="padding: 10px;">Are you sure you wanna roll?</b>
-      //       {options.map(option => (
-      //         <button id={option.text.toLowerCase()} onClick={option.action}>
-      //           {option.text}
-      //         </button>
-      //       ))}
-      //     </div>
-      // );
-
 
       this.data.is_html._selector = `#${id}`;
       IsHTMLService.SetHTML(this.data.is_html, this.data.is_html.html);
@@ -96,21 +79,23 @@ namespace game {
       );
 
       const topLeftAnchorMin = new Vector2(
-          (this.data.rect.anchorMin.x + this.data.rect.anchorMax.x) / 2,
-          Math.abs(((this.data.rect.anchorMin.y + this.data.rect.anchorMax.y) / 2) - 1)
-      )
+        (this.data.rect.anchorMin.x + this.data.rect.anchorMax.x) / 2,
+        Math.abs(
+          (this.data.rect.anchorMin.y + this.data.rect.anchorMax.y) / 2 - 1
+        )
+      );
 
       el.style.width = `${size.x * multiple}px`;
       el.style.height = `${size.y * multiple}px`;
 
       el.style.left = `${(displaySize.x / window.devicePixelRatio) *
-      topLeftAnchorMin.x  +
-      this.data.rect.anchoredPosition.x * multiple -
-      offset.x}px`;
+        topLeftAnchorMin.x +
+        this.data.rect.anchoredPosition.x * multiple -
+        offset.x}px`;
       el.style.top = `${(displaySize.y / window.devicePixelRatio) *
-      topLeftAnchorMin.y  -
-      this.data.rect.anchoredPosition.y * multiple -
-      offset.y}px`;
+        topLeftAnchorMin.y -
+        this.data.rect.anchoredPosition.y * multiple -
+        offset.y}px`;
     }
 
     // this method is called for each entity matching the IsHTMLBehaviorFilter signature, once when disabled
@@ -185,11 +170,11 @@ It should not go inside the namespace.
 */
 
 (function HDPI_Hacks_By_abeisgreat() {
-  const w = (window as any);
+  const w = window as any;
 
   const initialize_hack = () => {
     console.log("Initializing HDPI hacks v6 by @abeisgreat");
-    const fakeMouseEventFn = (ev) => {
+    const fakeMouseEventFn = ev => {
       const ut_HTML = w.ut._HTML;
       const fakeEvent = {
         type: ev.type,
@@ -203,7 +188,7 @@ It should not go inside the namespace.
       ev.stopPropagation();
     };
 
-    const fakeTouchEventFn = (ev) => {
+    const fakeTouchEventFn = ev => {
       const ut_HTML = w.ut._HTML;
       const changedTouches = [];
       for (var index = 0; index < ev.changedTouches.length; index++) {
@@ -225,15 +210,16 @@ It should not go inside the namespace.
       ev.stopPropagation();
     };
 
-    window.addEventListener("resize", function () {
+    window.addEventListener("resize", function() {
       const ut = w.ut;
 
       ut._HTML.onDisplayUpdated(
-          window.innerWidth * window.devicePixelRatio,
-          window.innerHeight * window.devicePixelRatio,
-          window.screen.width * window.devicePixelRatio,
-          window.screen.height * window.devicePixelRatio,
-          -1);
+        window.innerWidth * window.devicePixelRatio,
+        window.innerHeight * window.devicePixelRatio,
+        window.screen.width * window.devicePixelRatio,
+        window.screen.height * window.devicePixelRatio,
+        -1
+      );
 
       ut._HTML.canvasElement.style.width = `${window.innerWidth}px`;
       ut._HTML.canvasElement.style.height = `${window.innerHeight}px`;
@@ -242,33 +228,39 @@ It should not go inside the namespace.
       const mouseEvents = ["down", "move", "up"];
       const touchEvents = ["touch", "cancel", "move", "start"];
 
-      mouseEvents.forEach((type) => {
+      mouseEvents.forEach(type => {
         const eventType = `mouse${type}`;
         ut._HTML.canvasElement.removeEventListener(eventType, fakeMouseEventFn);
         ut._HTML.canvasElement.addEventListener(eventType, fakeMouseEventFn);
       });
 
-      touchEvents.forEach((type) => {
+      touchEvents.forEach(type => {
         const eventType = `touch${type}`;
         ut._HTML.canvasElement.removeEventListener(eventType, fakeTouchEventFn);
         ut._HTML.canvasElement.addEventListener(eventType, fakeTouchEventFn);
       });
 
-      setTimeout(function () {
-        mouseEvents.forEach((type) => {
-          ut._HTML.canvasElement.removeEventListener(`mouse${type}`, ut._HTML.mouseEventFn);
+      setTimeout(function() {
+        mouseEvents.forEach(type => {
+          ut._HTML.canvasElement.removeEventListener(
+            `mouse${type}`,
+            ut._HTML.mouseEventFn
+          );
         });
 
-        touchEvents.forEach((type) => {
-          ut._HTML.canvasElement.removeEventListener(`touch${type}`, ut._HTML.touchEventFn);
+        touchEvents.forEach(type => {
+          ut._HTML.canvasElement.removeEventListener(
+            `touch${type}`,
+            ut._HTML.touchEventFn
+          );
         });
       }, 100);
     });
     window.dispatchEvent(new Event("resize"));
-  }
+  };
 
   const intervalID = setInterval(() => {
-    const w = (window as any);
+    const w = window as any;
     const ut = w.ut;
     if (ut._HTML.canvasElement && w.known_ut_HTML !== ut._HTML) {
       w.known_ut_HTML = ut._HTML;
