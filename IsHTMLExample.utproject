@@ -82,7 +82,7 @@
     }, {
         "Type": { "Id": "fda5c62859e24e2ba349ca1006aa97b1", "Name": "IsHTMLConfiguration" },
         "Properties": {
-            "css": ".is_html > * {\n  display: block; \n  box-sizing: border-box;\n}\n\n.is_html > div {\n  padding: 10px;\n  border-radius: 5px;\n}\n\ninput {\n  color: black;\n  font-size: 20px;\n  background-color: #ccc;\n  padding: 10px;\n}\n\n\n"
+            "css": ".is_html > * {\n  display: block; \n  box-sizing: border-box;\n}\n\n.is_html > div {\n  padding: 10px;\n  border-radius: 5px;\n}\n\ninput {\n  color: black;\n  font-size: 20px;\n  background-color: #ccc;\n  padding: 10px;\n  width: inherit;\n  border: 2px solid black;\n  border-radius: 5px 0px 0px 5px;\n}\n\nbutton {\n  border: 2px solid black;\n  border-radius: 0px 5px 5px 0px;\n  border-left-width: 0px;\n}\n\n\n"
         }
     }]
 }]

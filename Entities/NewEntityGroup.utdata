@@ -110,8 +110,8 @@
             "size": {
                 "Type": { "Id": "3abb69286ddfc2d1c617a173c1eeb35d", "Name": "Vector2" },
                 "Properties": {
-                    "x": 1062,
-                    "y": 1014
+                    "x": 0,
+                    "y": 0
                 }
             }
         }
@@ -174,8 +174,6 @@
                 }
             }
         }
-    }, {
-        "Type": { "Id": "a015bc52c7befa4d7484891d74d2b574", "Name": "RectHitBox2D" }
     }, {
         "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" }
     }, {
@@ -255,8 +253,6 @@
         "Type": { "Id": "2266a95f5d16ca1ddde710d7c047ba69", "Name": "TransformLocalRotation" }
     }, {
         "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" }
-    }, {
-        "Type": { "Id": "a015bc52c7befa4d7484891d74d2b574", "Name": "RectHitBox2D" }
     }, {
         "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" }
     }, {
@@ -339,8 +335,6 @@
     }, {
         "Type": { "Id": "f11fe490eefc969bbc3fde5eab5ccd1e", "Name": "TransformLocalScale" }
     }, {
-        "Type": { "Id": "a015bc52c7befa4d7484891d74d2b574", "Name": "RectHitBox2D" }
-    }, {
         "Type": { "Id": "1c504a8a7963db0d32e89b527b90e057", "Name": "Sprite2DRenderer" }
     }, {
         "Type": { "Id": "be2f221c9af74ec5c0a4495a2d6769a3", "Name": "Sprite2DRendererOptions" },
@@ -348,7 +342,7 @@
             "size": {
                 "Type": { "Id": "3abb69286ddfc2d1c617a173c1eeb35d", "Name": "Vector2" },
                 "Properties": {
-                    "x": 806.4,
+                    "x": -255.6,
                     "y": 92.6
                 }
             }
@@ -356,7 +350,7 @@
     }, {
         "Type": { "Id": "f44107dcedac4ea6ae01c9ca986a4aae", "Name": "IsHTML" },
         "Properties": {
-            "html": "<input/>",
+            "html": "<div style=\"display: grid; grid-template-columns: 1fr fit-content(100%);\">\n<input placeholder=\"Type a message...\"/>\n<button>Send</button>\n</div>",
             "enabled": false
         }
     }]

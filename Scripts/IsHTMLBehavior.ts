@@ -54,7 +54,10 @@ namespace game {
       this.data.is_html._selector = `#${id}`;
       IsHTMLService.SetHTML(this.data.is_html, this.data.is_html.html);
       this.elements[this.data.is_html._selector] = tag;
-      this.data.sprite_renderer.color.a = 0;
+
+      if (!localStorage.getItem("IS_HTML_DEBUG")) {
+        this.data.sprite_renderer.color.a = 0;
+      }
     }
 
     OnEntityUpdate(): void {
@@ -84,6 +87,10 @@ namespace game {
           (this.data.rect.anchorMin.y + this.data.rect.anchorMax.y) / 2 - 1
         )
       );
+
+      if (((window as any).DEBUG || "") == this.data.is_html._selector) {
+        console.log(this.data.rect.sizeDelta, size);
+      }
 
       el.style.width = `${size.x * multiple}px`;
       el.style.height = `${size.y * multiple}px`;
@@ -127,7 +134,7 @@ namespace game {
           if (typeof value == "function" && key.indexOf("on") == 0) {
             const callbackId = "_" + getRandomID();
             IsHTMLEvents[callbackId] = value;
-            value = `IsHTMLEvents.${callbackId}()`;
+            value = `IsHTMLEvents.${callbackId}(event)`;
           } else if (typeof value == "object") {
             value = JSON.stringify(value);
           }
