@@ -28,12 +28,7 @@ First, look at the [example code](https://github.com/abehaskins/IsHTML/blob/mast
 After following the basic steps, you'll need to...
 
 5. Copy `tsconfig.override.json` to the same location in your project. This tells Tiny to load `.tsx` files. To ensure editor support, any file which uses `tsx` templates, must have the `.tsx` extension instead of `ts`(like `Scripts/Tag_BounceBehavior.tsx`)
-6. Use the `IsHTMLService.SetHTML` to set your content like in the [example](https://github.com/abehaskins/IsHTML/blob/master/Scripts/Tag_BounceBehavior.tsx#L39) or bind events like this...
-```jsx
-IsHTMLService.SetHTML(
-  this.data.is_html,
-  <input type="text" onchange={this.OnMessageChange} placeholder="Type a messasge...">
-);
+6. Use the `IsHTMLService.SetHTML` to set your content like in the [TagBounce_Behavior](https://github.com/abehaskins/IsHTML/blob/master/Scripts/Tag_BounceBehavior.tsx#L39) or bind events like in [TagInput_Behavior](https://github.com/abehaskins/IsHTML/blob/master/Scripts/Tag_InputBehavior.tsx#L12)
 ```
 
 ## Notes & Issues
